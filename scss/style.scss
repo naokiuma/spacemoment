@@ -41,7 +41,6 @@ ul li {
   padding: 0px;
   font-family: 'Hiragino Kaku Gothic W5 JIS2004',sans-serif;
  }
-
 /*--------------フォーム--------------*/
 .form{
   margin: auto;
@@ -57,7 +56,6 @@ ul li {
     right: 0;
     top: 0;
     height: 50px;
-    box-shadow: 4px 4px;
     font-size: 1.3vw;
     font-weight: bold;
     letter-spacing: 1px;
@@ -657,7 +655,6 @@ header {
     text-align: center;
     height: 400px;
     overflow: hidden;
-    background-image: url(../img/back.jpg);
     background-size: cover;
     background-attachment: fixed;
     @media screen and (max-width: $res-max-width){
