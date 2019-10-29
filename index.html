@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Space & Moment</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+
+    <!--jquery-->
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap" rel="stylesheet"> <!--カードのフォント-->
+
+
+    <!--fontawasome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+</head>
+<body>
+
+<header class="header js-float-menu">
+  <div class="logo">
+    Space & Moment
+  </div>
+
+    <div class="menu__trigger js-toggle-sp-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  <nav class="menu js-toggle-sp-menu-target"><!--クリックされるとアクティブクラスがつく-->
+    <ul class="toggle-menu">
+      <li><a href="#unq_top">Top</a></li>
+      <li><a href="#unq_about">About</a></li>
+      <li><a href="#unq_wifi">Wifi</a></li>
+      <li><a href="#catering">Food</a></li>
+      <li><a href="#unq_game">Game</a></li>
+      <li><a href="#unq_price">Price</a></li>
+      <li><a href="#unq_place">Access</a></li>
+    </ul>
+
+    <!--フォーム-->
+    <section class="form">
+      <button class="form__btn" name="button" v-on:click="isActive = !isActive">Contact</button>
+      <div class="form__modal" v-show="isActive">
+        <h2>お問い合わせフォーム</h2>
+        E-mail<br>
+        <input type="email" v-model="email" name="" placeholder="必須"><br>
+         <p class="error" v-if="error.email">{{ error.email }}</p><br>
+        お名前<br>
+        <input type="text" v-model="name" name="" placeholder="必須"><br>
+         <p class="error" v-if="error.name">{{ error.name }}</p><br>
+        お問い合わせ内容<br>
+        <textarea name="" rows="6" cols="40" placeholder="1000文字以内でご記入ください"  v-model="count"></textarea><br>
+        文字数 {{ charaCount }}/1000
+        <br>
+        <input  :disabled="input" v-on:click="formsubmit" type="submit" value="確認"><br><!--送信ぼたん-->
+        <button class="form__modal__close" name="button" v-on:click="isActive = false">閉じる</button><br>
+      </div>
+
+      <section v-if="postConfirm" class="confirm">
+        <h2>この内容で送信しますか？</h2>
+        <p>E-mail</p>
+        {{ email }}
+        <p>お名前</p>
+        {{ name }}
+        <p>問い合わせ内容</p>
+        {{ count }}
+
+      <div class="btn_group">
+        <button class="" name="button" v-on:click="formPost">この内容で送信</button>
+        <button class="" name="button" v-on:click="formCansell">キャンセル</button><br>
+      </div>
+
+      </section>
+
+      <section v-if="postFinish" class="post_finish">
+
+        お問い合わせありがとうございます。
+        入力いただいたメールアドレスに3営業日以内にご連絡いたしま
+        <h3 style="padding:50px;">せん！！<br>（サンプルサイトです）</h3>
+
+        <p>※5秒後に再読み込みします。</p>
+      </section>
+
+    <div class="cover" v-show="isActive"></div>
+
+    </section>
+
+
+  </nav>
+
+</header>
+
+
+
+<section class="billboard" id="unq_top">
+  <div class="billboard__mask">
+    <div class="billboard__text">
+      <h2>We Provide<br>various space and moment.</h2>
+    </div>
+    <section class="billboard__news">
+      <h2>- NEWS -</h2>
+      <ul>
+        <li><time>2019/01/01</time>本年もよろしこお願いいたします。</li>
+        <li><time>2019/03/25</time>【4月中】初回キャンペーン実施します。</li>
+        <li><time>2019/05/05</time>子供も大人も遊べるスペースイベントを行います。</li>
+      </ul>
+
+    </section>
+  </div>
+</section>
+
+
+
+<section class="scene js-upto-slide" id="unq_about">
+  <div class="scene__text" v-show="isActiveup">
+    <h2>- About -</h2>
+    <p>オンラインで誰もが繋がる時代。<br>共通の目的、趣味を持った人たちで集まる価値はより高まっています。<br>
+      space ＆ momentはゲーム大会、立食パーティ、商談、ミーティング、新商品販売イベントなど、<br>
+      様々なイベントのためのスペースを提供します。<br>
+      <br>
+      インターネットネットワーク、ゲーム、フードなど<br>イベントを盛り上げる各種サービスも常備しています。<br>
+      <br>
+    </p>
+  </div>
+
+  <div class="scene__circle circle1">
+    <div class="scene__mask">
+      <div class="caption"></div>
+    </div>
+  </div>
+  <div class="scene__circle circle2">
+    <div class="scene__mask">
+      <div class="caption"></div>
+    </div>
+  </div>
+  <div class="scene__circle circle3">
+    <div class="scene__mask">
+      <div class="caption"></div>
+    </div>
+  </div>
+  <div class="scene__circle circle4">
+    <div class="scene__mask">
+      <div class="caption"></div>
+    </div>
+  </div>
+
+</section>
+
+<section class="service">
+  <div class="service__top">
+    <h2>- Service -</h2>
+
+  </div>
+  <div class="service__explain">
+    <h2>Wifi、フード、ゲーム。<br>3つのサービスを提供します。</h2>
+    <div class="service__explain__img">
+        <img src="img/wif-icon.png" alt="">
+        <img src="img/food-icon.png" alt="">
+        <img src="img/game-icon.png" alt="">
+    </div>
+  </div>
+
+  <section class="service__wifi js-left-slide" id="unq_wifi">
+    <div class="service__wifi__left" v-show="isActive" >
+      <h3> Wifi <span class="add_price">※一人当たり¥300円/day</span></h3>
+
+      <p>常時接続インターネットサービス<br>
+      <br>
+      高速インターネットサービスを提供します。<br>
+      Wifiはもちろん、有線接続にも対応。<br>
+      イベント中のSNSシェアや、ゲームイベントにもご利用ください。<br>
+      <br>
+      <p>設備レンタル<span style="color:red;">無料！</span><br>
+
+      Wifiサービスをお申し込みの場合<br>
+      追加料金なしで下記の機材もご利用いただけます。<br>
+      <br>
+      ・PC(Windows/Mac)<br>
+      ・投影用巨大モニター<br>
+      </p>
+    </div>
+    <div class="service__wifi__right" v-show="isActive">
+      <img src="img/network.jpg" alt="" class="img1">
+      <img src="img/system.jpg" alt="" class="img2">
+    </div>
+  </section>
+
+
+  <section class="service__catering" id="catering">
+    <div class="service__catering__left">
+
+    <div class="service__catering__left-text" >
+      <h3> Food <span class="add_price">¥1000/一人</span></h3>
+        <template v-if="menu == '1'">
+        <div class="food_menu">
+        <h4>【ドリンクメニュー】<h4>
+          <h4>アルコール</h4>
+          <ul>
+            <li>ビール</li>
+            <li>ワイン（赤・白）</li>
+            <li>バドワイザー</li>
+            <li>ジントニック</li>
+            <li>ホッピー</li>
+            <li>ハイボール</li>
+            <li>カシスオレンジ/カシスサワー</li>
+          </ul>
+          <h4>ソフトドリンク</h4>
+          <ul>
+            <li>コカコーラ</li>
+            <li>オレンジジュース</li>
+            <li>烏龍茶</li>
+            <li>麦茶</li>
+            <li>ウォーター</li>
+          </ul>
+        </p>
+        </div>
+
+      </template>
+
+      <template v-else-if="menu == '2'">
+      <div class="food_menu">
+        <h4>【フードメニュー】<h4>
+          <ul>
+            <li>サンドイッチ</li>
+            <li>ポテトチップス</li>
+            <li>フライドポテト</li>
+            <li>オレオ</li>
+            <li>チョコレート</li>
+            <li>おせんべい</li>
+            <li>クラッカー</li>
+            <li>チーズ</li>
+          </ul>
+      </template>
+      </div>
+
+    </div>
+    </div>
+
+
+    <div class="service__catering__right">
+
+      <div class="card card1" v-on:click="choice1">
+        <img class="click click2" src="img/click.png" alt="">
+        Drink
+      </div>
+
+      <div class="card card2" v-on:click="choice2">
+        <img class="click clik2" src="img/click.png" alt="">
+        Snack
+      </div>
+    </div>
+
+  </section>
+
+  <section class="service__game" id="unq_game" >
+      <div class="service__game__img">
+        <ul>
+          <li><img class="" src="img/game1.jpg" alt="">
+          <img class="" src="img/game2.jpg" alt=""></li>
+          <li><img class="" src="img/game3.jpg" alt="">
+          <img class="" src="img/game4.jpg" alt=""></li>
+          <li><img class="" src="img/game5.jpg" alt="">
+          <img class="" src="img/game6.jpg" alt=""></li>
+        </ul>
+      </div>
+      <div class="service__game__text">
+        <h3> Game <span class="add_price">¥500/一人</span></h3>
+        <p>テレビゲーム/ボードゲームで<br>イベントを盛り上げよう。<br>
+        100種類のボードゲーム、<br>
+        <br>
+        最新ゲームから<br>
+        ファミコン世代にもオススメの<br>
+        レトロゲームも各種取り揃えています。<br>
+        <br>
+        <p>ゲーム例：<br>
+        FC/SFC/64/GC/Wii/Switch<br>
+        PS/PS2/PS3/PS4<br>
+        メガドライブ/セガサターン/DC<br>
+        バーチャルボーイなどなど。<br>
+        <span style="color:red;">※ラインナップはお問い合わせください。</span>
+        <br>
+        </p>
+      </div>
+  </section>
+
+
+
+</section>
+
+
+
+  <section class="service__price" id="unq_price">
+    <div class="service__price__top">
+      <h2>-Price-</h2>
+      <p>選択したオプションにより値段が変わります。
+      </p>
+    </div>
+
+<!--プライス計算-->
+      <section class="service__price__culc" id="vue-price">
+        <h2>合計金額：¥{{allprice}}</h2>
+        <div class="price_table">
+
+        <all-price
+        v-for="post in posts"
+        v-on:emit-price="priceplus(post)"
+        v-bind:key="post.id"
+        v-bind:post="post"
+        ></all-price>
+
+        </div>
+
+
+        <!--
+        <div class="wifi-price">
+        <h3>Free（※デフォルトサービス）</h3>
+        <button class="wifi-price__button">
+          Wifi
+        </button>
+        </div>
+        -->
+
+
+      </section>
+
+  </section>
+
+
+<section class="place" id="unq_place">
+      <h2>-Access-</h2>
+  <div class="place__image">
+    <div class="js-show">
+        <p v-show="isActiveup"><span class="place__toptext">全ての最寄駅から徒歩10分。</span><br>
+        歩いていても、バスで来ても、車で来ても問題なし。<br>
+        スペース間の移動はキックボード、自転車、バイクもお貸出しします。駐車場完備、無料。<br>
+        <br>
+
+        〒000-0000<br>
+        東京都渋谷区渋谷<br>
+        0-0-0 superurtlabuilding 2F-50F
+        Tel:00-0000-0000
+
+        <br>
+    </div>
+
+  </div>
+
+  <div class="map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.7720152239476!2d139.6958671154549!3d35.657988280199696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188caa6707c341%3A0xe0f267e59f717458!2z5riL6LC344Oe44O844Kv44K344OG44Kj!5e0!3m2!1sja!2sjp!4v1559572412903!5m2!1sja!2sjp" width="100%" height="900" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+
+</section>
+
+<footer>
+    <div class="footer__text">
+      Copyright Space & Moment株式会社  All Rights Reserved.
+    </div>
+
+</footer>
+
+
+
+
+  <!--<script type="text/babel" src="js/app.js"></script>リアクト練習。jsファイルのタイプはtext/babel！-->
+  <script src="js/vue.js"></script>
+  </body>
+</html>

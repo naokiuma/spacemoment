@@ -1,0 +1,38 @@
+@charset "UTF-8";
+input, button, textarea, select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+ul li {
+  list-style: none;
+  white-space: nowrap; }
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Hiragino Kaku Gothic W5 JIS2004',sans-serif; }
+
+header{
+  display: block;
+  height: 500px;
+  background-color: red;
+}
+
+.div1{
+  display: block;
+  height: 800px;
+  background-color: yellow;
+}
+
+.div2{
+  display: block;
+  height: 800px;
+  background-color: blue;
+}
+
+.div3{
+  display: block;
+  height: 600px;
+  background-color: skyblue;
+}

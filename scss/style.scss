@@ -1,0 +1,1323 @@
+@charset "UTF-8";
+$menu-color:#E6EA90;
+$main-color:#D8EDED;
+$res-max-width:414px;
+$main-height:1000px;
+$blackmain:#1a1a1a;
+$redmain:#bb352b;
+$font-l:50px;
+$font-m:30px;
+$font-s:15px;
+$after-text:0.5em;
+$balck-textshadow:black 0px -1px, black 0px 1px,
+black 1px 1px, black -1px 1px, black 1px -1px,
+black -1px -1px, black 1px 1px, black -1px 1px,
+black 1px -1px, black -1px -1px, black 1px 1px,
+black -1px 1px, black 2px -1px, black -2px -1px;
+
+
+input, button, textarea, select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
+.add_price{
+  font-size: 10px;
+  color: black;
+  display: inline-block;
+  border: 1px solid #c5a8a1;
+  padding: 5px;
+  background-color: #e6e669;
+}
+
+ul li {
+  list-style: none;
+  white-space: nowrap; }
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Hiragino Kaku Gothic W5 JIS2004',sans-serif;
+ }
+
+/*--------------フォーム--------------*/
+.form{
+  margin: auto;
+  text-align: center;
+
+  &__btn{
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    animation-name: RightToLeft;
+    animation-duration: 1s;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 50px;
+    box-shadow: 4px 4px;
+    font-size: 1.3vw;
+    font-weight: bold;
+    letter-spacing: 1px;
+    @media screen and (max-width: $res-max-width){
+      height: 70px;
+      width: 200px;
+      font-size: 20px;
+      position: static;
+    }
+    &:hover{
+      transform: scale(0.95);
+    }
+  }
+  &__modal{
+    width: 60%;
+    height: 650px;
+    background: $main-color;
+    box-sizing: border-box;
+    position: absolute;
+    top:45%;
+    left:20vw;
+    z-index: 12;
+    text-align: center;
+    transition: 1s;
+    animation-name: OpacityMove;
+    box-shadow: 4px 4px;
+      @media screen and (max-width: $res-max-width){
+        width: 90%;
+        top: 10%;
+        left: 5vw;
+        height: 550px;
+      }
+    h2{
+      font-size: $font-m;
+      margin: 50px auto 50px auto;
+      @media screen and (max-width: $res-max-width){
+        font-size: 20px;
+      }
+    }
+    &__close{
+      background: #8d8d8d;
+      padding: 5px 15px;
+      margin: 30px auto;
+      position: absolute;
+      box-shadow: 2px 2px;
+      top: 2%;
+      left: 5%;
+      @media screen and (max-width: $res-max-width){
+        left: 4%;
+        top: 85%;
+      }
+      &:hover{
+        box-shadow: 0 0 7px #1abc9c;
+        border: 2px solid #1abc9c;
+      }
+    }
+    p{
+      font-size: 10px;
+    }
+  }
+}
+
+.cover{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: 11;
+}
+
+.confirm{
+  width: 60%;
+  height: 650px;
+  padding: 10% 10%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 45%;
+  left: 20vw;
+  z-index: 13;
+  text-align: center;
+  transition: 1s;
+  //animation-name: OpacityMove;
+  box-shadow: 4px 4px;
+  animation-name: cover_action;/* CSSアニメーション名 */
+	animation-duration: .4s;/* アニメーションのスピード */
+	animation-fill-mode: forwards;/* アニメーションの最後の状態を維持する */
+  p{
+    margin: 2%;
+  }
+  @media screen and (max-width: $res-max-width){
+    width: 90%;
+    top: 10%;
+    left: 5vw;
+    height: 550px;
+  }
+}
+
+@keyframes cover_action {
+	0% {
+    width:0;
+    opacity: 0.1;
+  }
+  50%{
+    width:10%;
+    opacity: 0.4;
+  }
+  75%{
+    width:30%;
+    opacity: 0.7;
+  }
+	100% {
+    width:60%;
+    opacity: 1;
+    background: #55D5D5;}
+}
+
+.btn_group{
+  text-align: center;
+  margin-top: 100px;
+  button{
+    margin: 20% 5%;
+    padding: 3%;
+  }
+}
+
+.post_finish{
+  width: 60%;
+  height: 650px;
+  padding: 10% 10%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 45%;
+  left: 20vw;
+  z-index: 14;
+  text-align: center;
+  transition: 1s;
+  //animation-name: OpacityMove;
+  box-shadow: 4px 4px;
+  animation-name: finish_action;/* CSSアニメーション名 */
+	animation-duration: 1s;/* アニメーションのスピード */
+	animation-fill-mode: forwards;/* アニメーションの最後の状態を維持する */
+  @media screen and (max-width: $res-max-width){
+    width: 90%;
+    top: 10%;
+    left: 5vw;
+    height: 550px;
+  }
+}
+
+@keyframes finish_action {
+	0% {
+    height:10px;
+    opacity: 0.1;
+  }
+	100% {
+    height:650px;
+    opacity: 1;
+    background: white;}
+}
+
+.btn_group{
+  text-align: center;
+  button{
+    margin: 20% 5%;
+    padding: 3%;
+  }
+}
+
+
+
+// input系。https://www.nxworld.net/tips/15-useful-css-snippets-in-form-style.html-----------
+input[type="text"]{
+  width: 200px;
+  height: 25px;
+  transition: 0.2s;
+  &:focus{
+    box-shadow: 0 0 7px #1abc9c;
+    border: 2px solid #1abc9c;
+    width: 300px;
+    height: 30px;
+    transition: 0.2s;
+  }
+}
+
+input[type="email"]{
+  width: 200px;
+  height: 25px;
+  transition: 0.2s;
+  &:focus{
+    box-shadow: 0 0 7px #1abc9c;
+    border: 2px solid #1abc9c;
+    width: 300px;
+    height: 30px;
+    transition: 0.2s;
+  }
+}
+
+input[type="submit"]{
+  width: 150px;
+  height: 40px;
+  background-color: #9BE983;
+  font-size: 15px;
+  //margin: 5px;
+  position: absolute;
+  bottom: 10%;
+  left: 40%;
+  @media screen and (max-width: $res-max-width){
+    left: 30%;
+  }
+  &:hover{
+    border-bottom: 4px solid #f5000061;
+    color: #1b1b1b91;
+  }
+}
+
+textarea{
+    transition: 0.6s;
+    margin: 20px;
+    @media screen and (max-width: $res-max-width){
+      width: 300px;
+    }
+  &:focus{
+    box-shadow: 0 0 7px #1abc9c;
+    border: 2px solid #1abc9c;
+    width: 310px;
+    height: 150px;
+    transition: 0.6s;
+  }
+}
+
+.error{
+  color: red;
+}
+
+/*-------------ヘッダー---------------*/
+
+header {
+  display: flex;
+  justify-content:space-between;
+  height: 50px;
+  width: 100%;
+  background-color: #D1ECEFDE;
+  position: fixed;
+  z-index:10;
+  font-style: oblique;
+    .logo{
+      width: 40%;
+      padding-left: 3%;
+      float: left;
+      animation-name: LeftToRight;
+      animation-duration: 1s;
+      font-family: 'Cabin Sketch', cursive; //Cabin Sketch
+      line-height: -moz-block-height;
+      font-size: 40px;
+      @media screen and (max-width: $res-max-width){
+        width:90%;
+        font-size: 10vw;
+      }
+    }
+  .menu {
+    width:60%;
+    height: 50px;
+    @media screen and (max-width: $res-max-width){
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -100%;
+      background: rgba(255, 255, 255, .85);
+      width: 100%;
+      height: 100vh; //ウインドウのサイズいっぱい。100%だと、親要素の100%になる
+      padding-top: 50px;
+      transition: .1s;
+      //margin-left: 30px;
+      &.active {
+      transition: .5s;
+      transform: translateX(-100%); //menuにactiveというクラスがついた時に左に100%移動。
+      z-index: 2;
+      }
+    }
+    li{
+      float: left;
+      line-height: 50px;
+      padding-left: 10px;
+      margin-left: 30px;
+      font-size: 1vw;
+      animation-name: RightToLeft;
+      animation-duration: 1s;
+      @media screen and (max-width: $res-max-width){
+        float: none;
+        font-size: 20px;
+        margin: 20px 0px;
+      }
+      a{
+        text-decoration: none;
+        color: $blackmain;
+        transition: 1s;
+        &:hover{
+          border-bottom: 4px solid $redmain;
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+.toggle-menu{
+  text-align: center;
+}
+.menu__trigger{
+  display: none;
+  @media screen and (max-width: $res-max-width){
+    display: inline-block;
+  }
+  transition: all .4s;
+  box-sizing: border-box;
+  position: relative;
+  width: 40px;
+  margin: 5px;
+  height: 32px;
+  z-index: 3;
+  span {
+    display: inline-block;
+    transition: all .4s;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: $blackmain;
+    border-radius: 4px;
+    @media screen and (max-width: $res-max-width){
+      left: -20px;
+    }
+      &:nth-of-type(1) {
+        top: 0;
+      }
+      &:nth-of-type(2) {
+        top: 14px;
+      }
+      &:nth-of-type(3) {
+        bottom: 0;
+      }
+    }
+      &:active span {
+        &:nth-of-type(1) {
+          transform: translateY(12px) rotate(-45deg);
+        }
+          &:nth-of-type(2) {
+        opacity: 0;
+        }
+          &:nth-of-type(3) {
+        transform: translateY(-15px) rotate(45deg);
+        }
+      }
+}
+
+
+//ヘッダー部分空白よう
+.top-box{
+  height: 80px;
+
+}
+.billboard{
+  background-attachment: fixed;
+  display: block;
+  height:1000px;
+  width: 100%;
+  background-image:url(../img/top.jpg);
+  background-size: cover;
+  position: relative;
+    @media screen and (max-width: $res-max-width){
+      background-image: url(../img/top-sm.png);
+      height: 600px;
+      background-attachment:inherit;
+    }
+  &__mask{//何かの時用
+    height: 100%;
+  }
+  &__text{
+    border-radius: 5%;
+    font-size: $font-m;
+    font-style: italic;
+    color: white;
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    animation-name: BottomToUp;
+    animation-duration: 2s;
+    -webkit-text-stroke: 0.7px #000;
+    @media screen and (max-width: $res-max-width){
+      font-size:25px;
+      top: 10%;
+    }
+
+    &::after{
+      content:"かけがえのない時間と空間を。";
+      font-size: 30px;
+      color: white;
+      @media screen and (max-width: $res-max-width){
+        font-size: 0.7em;;
+      }
+    }
+  }
+
+  &__news{
+    display: block;
+    height: 17%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-style: oblique;
+    @media screen and (max-width: $res-max-width){
+    height: 120px;
+    }
+    h2{
+      font-size: $font-m;
+      color: white;
+      margin: 10px 0;
+      @media screen and (max-width: $res-max-width){
+      font-size: 3vw;
+      }
+    }
+    li{
+      font-size: $font-s;
+      color: white;
+      padding:5px 0;
+      @media screen and (max-width: $res-max-width){
+        font-size: 10px;
+      }
+      time{
+        margin: 0 5px;
+      }
+    }
+
+  }
+}
+
+
+/*シーン*/
+.scene{
+  display: block;
+  height: 1200px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  background: radial-gradient(#FFF, #9acbf5);
+      @media screen and (max-width: $res-max-width){
+        height: 900px;
+      }
+  &__text{
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    animation-name: BottomToUp;
+    animation-duration: 1s;
+    @media screen and (max-width: $res-max-width){
+      position: absolute;
+      top: 20%;
+      left: 5%;
+      animation-name: BottomToUp;
+      animation-duration: 1s;
+    }
+    h2{
+      font-size: $font-m;
+      margin: 75px 0;
+      color: $redmain;
+      @media screen and (max-width: $res-max-width){
+        font-size: 20px;
+        text-align: center;
+      }
+      &::after{
+        content: "Space and Momentとは";
+        color: gray;
+        font-size: $after-text;
+        display: block;
+        @media screen and (max-width: $res-max-width){
+          font-size:20px;
+        }
+      }
+    }
+    p{
+      font-size:$font-s;
+      width: 70%;
+      height: 100%;
+      text-shadow: 1px 1px white;
+      letter-spacing: 1px;
+      line-height: 30px;
+      @media screen and (max-width: $res-max-width){
+        font-size: 10px;
+        line-height: 20px;
+        width: 100%;
+      }
+    }
+
+
+
+  }
+  &__circle{
+    border: black solid 0.5px;
+    border-radius: 50%;
+    display: block;
+    height:200px;
+    width:200px;
+    position: absolute;
+
+    @media screen and (max-width: $res-max-width){
+      height:100px;
+      width: 100px;
+      opacity: 0.5;
+    }
+    &:hover{
+      opacity: 0.6;
+      transition: 0.4s;
+    }
+  &__mask{
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+
+  &.fas{
+    font-size: 150px;
+  }
+}
+}
+
+.circle1{
+  top:15%;
+  left:10%;
+  background-image: url(../img/game.png);
+  background-size: cover;
+}
+
+.circle2{
+  top:15%;
+  right:10%;
+  background-image: url(../img/beer.png);
+  background-size:cover;
+}
+
+
+.circle3{
+  bottom: 15%;
+  left: 12%;
+  background-image: url(../img/necty.png);
+  background-size:cover;
+}
+
+.circle4{
+  bottom: 15%;
+  right: 12%;
+  background-image: url(../img/cart.png);
+  background-size:cover;
+}
+
+
+
+//サービス説明ーーーーーーーーーーーーー
+
+.service{
+  width: 100%;
+  &__top{
+    width: 100%;
+    margin: auto;
+      @media screen and (max-width: $res-max-width){
+
+      }
+    h2{
+      font-size: $font-m;
+      margin: 100px 0;
+      text-align: center;
+      color: $redmain;
+        @media screen and (max-width: $res-max-width){
+          font-size: 30px;
+          margin: 20px 0;
+        }
+      &::after{
+        content: "提供サービス";
+        color: gray;
+        font-size: $after-text;
+        display: block;
+
+      }
+    }
+  }
+
+  /*サービスエクスプレイン*/
+  &__explain{
+    text-align: center;
+    height: 400px;
+    overflow: hidden;
+    background-image: url(../img/back.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    @media screen and (max-width: $res-max-width){
+      height: 250px;
+    }
+    &__img{
+      padding-top: 5%;
+      height: 70%;
+      width: 100%;
+      img{
+        width: 100px;
+        margin: 0 5%;
+        @media screen and (max-width: $res-max-width){
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+    h2{
+      margin: 30px;
+      @media screen and (max-width: $res-max-width){
+          font-size: 1em;
+      }
+    }
+  }
+}
+
+
+.service__wifi{
+  height: 800px;
+  overflow: hidden;
+  width: 100%;
+  background: linear-gradient(to bottom, #90EC9280, #5FB55F);
+  @media screen and (max-width: $res-max-width){
+    height: 900px;
+  }
+  &__left{
+    text-align: center;
+    height: 100%;
+    width: 45%;
+    float: left;
+    font-size: 40px;
+    box-sizing: border-box;
+    margin-top: 50px;
+    animation-name: RightToLeft;
+    animation-duration: 1s;
+    @media screen and (max-width: $res-max-width){
+      line-height: 20px;
+      width: 100%;
+      height: 50%;
+      float: none;
+      margin-top: 0px;
+    }
+    h3{
+      font-size: $font-m;
+      margin: 20px;
+      padding: 50px;
+      color: $redmain;
+
+      &::after{
+        content: "高速インターネット";
+        color: gray;
+        font-size: $after-text;
+        display: block;
+      }
+    }
+    p{
+      font-size:$font-s;
+      margin: 10px;
+      letter-spacing: 1px;
+      line-height: 20px;
+      @media screen and (max-width: $res-max-width){
+        font-size: 0.75em;
+        width: 100%;
+      }
+    }
+  }
+  &__right{
+    height: 100%;
+    width: 50%;
+    float: right;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 100px;
+    @media screen and (max-width: $res-max-width){
+      height: 50%;
+      width: 100%;
+      margin-top: auto;
+      float: none;
+    }
+    img{
+      box-shadow: 12px 12px;
+      transition: 0.5s;
+      width: 55%;
+      @media screen and (max-width: $res-max-width){
+        float: none;
+        text-align: center;
+      }
+      &:hover{
+        border-radius: 10%;
+        transition: 0.8s;
+        transform: scale(1.1);
+      }
+    }
+    .img1{
+      transform: rotate(10deg);
+      position: absolute;
+      top: 10%;
+      left: 20%;
+      z-index:2;
+      @media screen and (max-width: $res-max-width){
+        transform:none;
+        position:relative;
+        top: auto;
+      }
+    }
+    .img2{
+      position: absolute;
+      top: 40%;
+      left: 5%;
+    }
+  }
+}
+
+
+//------------------フードサービス
+.service__catering{
+  height: 800px;
+  overflow: hidden;
+  padding: 100px 0;
+  @media screen and (max-width: $res-max-width){
+    height: 600px;
+    padding:30px 0;
+    background-image:url(../img/catering.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .food_menu{
+    animation-name: BottomToUp;
+    animation-duration: 1s;
+  }
+  &__left{
+    height: 100%;
+    width: 80%;
+    background-image:url(../img/catering.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    float: left;
+    @media screen and (max-width: $res-max-width){
+      width: 100%;
+      height: 70%;
+      float: left;
+      background-image:none;
+    }
+    &-text{
+      height: 100%;
+      width: 80%;
+      display: block;
+      background-color: rgba(0, 0, 50, 0.2);
+      margin: auto;
+      @media screen and (max-width: $res-max-width){
+        height: 140%;
+      }
+      h3{
+        font-size: $font-m;
+        padding: 50px 0;
+        text-align: center;
+        color: white;
+        @media screen and (max-width: $res-max-width){
+          padding: 25px 0;
+        }
+
+        &::after{
+          content: "料理提供サービス";
+          color: white;
+          font-size: $after-text;
+          display: block;
+        }
+      }
+      h4 {
+        font-size:20px;
+        text-align: center;
+        color: white;
+        margin:10px;
+        @media screen and (max-width: $res-max-width){
+          font-size: 15px;
+        }
+      }
+      p,li{
+        font-size: $font-s;
+        margin: 10px;
+        color: white;
+        text-align: center;
+        @media screen and (max-width: $res-max-width){
+          font-size: 10px;
+        }
+      }
+    }
+  }
+    &__right{
+      position: relative;
+      height: 100%;
+      width: 20%;
+      float:left;
+      .card{
+        display: block;
+        width:300px;
+        height: 200px;
+        background-color: rgba(0, 0, 500, 0.1);
+        border: solid 1px;
+        font-family: 'Cabin Sketch', cursive; //Cabin Sketch
+        font-size: 70px;
+        color: yellow;
+      @media screen and (max-width: $res-max-width){
+        width: 80%;
+        height: 100px;
+        font-size: 20px;
+        }
+        &:hover{
+          opacity: 0.8;
+        }
+
+    }
+    .card1{
+      position: absolute;
+      right: 50px;
+      top:100px;
+      background-image: url(../img/beer-cart.jpg);
+      background-size: cover;
+      @media screen and (max-width: $res-max-width){
+              top: -400px;
+              left:10px;
+        }
+    }
+    .card2{
+      position: absolute;
+      right: 50px;
+      top:350px;
+      bottom:100px;
+      background-image: url(../img/snack.jpg);
+      background-size: cover;
+      @media screen and (max-width: $res-max-width){
+              top: -275px;
+              left: 10px
+        }
+    }
+
+    }
+  }
+
+
+
+
+//-----------------------ゲーム
+.service__game{
+  height: 900px;
+  width: 100%;
+  display: block;
+  &__img{
+    float:left;
+    width: 60%;
+    @media screen and (max-width: $res-max-width){
+      width: 40%;
+      padding: 50px 0;
+      }
+    ul{
+      text-align: center;
+      margin-top: 10%;
+    }
+    img{
+      width:320px;
+      height:210px;
+      transition: 0.5s;
+      margin: 3%;
+      max-width: 370px;
+      max-height: 210px;
+      @media screen and (max-width: $res-max-width){
+            width: 100%;
+            height: 100px;
+            display: block;
+        }
+
+      &:hover{
+        border-radius: 10%;
+        transition: 0.5s;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__text{
+    float: right;
+    width:40%;
+    height: 60%;
+    padding-top:100px;
+    display: block;
+    text-align: center;
+    animation-name: RightToLeft;
+    animation-duration: 1s;
+    @media screen and (max-width: $res-max-width){
+      padding-top: 50px;
+      width:50%;
+      margin: 10px 0 30px 20px;
+      line-height: 20px;
+      }
+    h3{
+      font-size: $font-m;
+      padding: 50px;
+      color: $redmain;
+      @media screen and (max-width: $res-max-width){
+        padding: 100px 0;
+        }
+      &::after{
+        content: "ボードゲーム/テレビゲーム";
+        color: gray;
+        font-size: 10px;
+        display: block;
+      }
+    }
+    p{
+      font-size:$font-s;
+      margin: 10px;
+      letter-spacing: 1px;
+      line-height: 20px;
+      @media screen and (max-width: $res-max-width){
+        font-size:12px;
+        }
+    }
+  }
+}
+
+
+/*----------------------priceのとこ-------------*/
+
+.service__price{
+  height: 850px;
+  background: linear-gradient(to bottom, #EAF3F3, #5FE65F);
+  animation-name: RightToLeft;
+  animation-duration: 1s;
+  font-family:"Montserrat",'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','ヒラギノ丸ゴ Pro W4','Hiragino Maru Gothic Pro',游ゴシック体,'Yu Gothic',YuGothic,sans-serif;
+  p{
+    text-align: center;
+    font-size: 20px;
+    @media screen and (max-width: $res-max-width){
+      font-size:15px;
+      }
+  }
+  &__culc h2{
+    font-size: $font-m;
+    padding: 50px 0 100px 0;
+    text-align: center;
+    @media screen and (max-width: $res-max-width){
+      padding: 35px 0 70px 0;
+      }
+    &::after{
+      content: "※一人当たり/1日あたりの金額です";
+      color: gray;
+      font-size: $after-text;
+      display: block;
+    }
+
+  }
+
+  &__top{
+    h2{
+      font-size: $font-m;
+      padding: 50px 0;
+      text-align: center;
+      color: $redmain;
+      @media screen and (max-width: $res-max-width){
+          padding: 75px 0 75px 0
+        }
+
+      &::after{
+        content: "値段";
+        color: gray;
+        font-size: $after-text;
+        display: block;
+      }
+    }
+
+  }
+}
+  .wifi-price{
+    text-align:center;
+    width: 33%;
+    float: left;
+    @media screen and (max-width: $res-max-width){
+      width: 100%;
+      margin-bottom: 75px;
+      }
+      h3{
+        padding: 10px;
+        @media screen and (max-width: $res-max-width){
+          font-size: 12px;
+          }
+      }
+    &__button{
+      display: inline-block;
+      color: black;
+      font-size: 1em;
+      line-height: 1;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      height: 50px;
+      width: 80%;
+      pointer-events: none;
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);/*影*/
+      -webkit-tap-highlight-color: transparent;
+      position: relative;
+      @media screen and (max-width: $res-max-width){
+        width: 130px;
+        }
+      &::after{
+        content: "Checked!";
+        font-size: 0.5em;
+        color: red;
+        position: absolute;
+        bottom: -10px;
+        right: -10px;
+        background-color: #87ceebcc;
+        padding: 10px;
+        border-radius: 10px;
+        z-index:5;
+      }
+    }
+  }
+
+  .button__active{
+    &::after{
+      content: "Checked!";
+      font-size: 0.5em;
+      color: red;
+      position: absolute;
+      bottom: -10px;
+      right: -30px;
+      animation-name: RightToLeft;
+      animation-duration: 1s;
+      transition: 1s;
+      background-color: #87ceebcc;;
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 2;
+    }
+  }
+
+  .price-post{
+    width: 33%;
+    float: left;
+    text-align: center;
+
+    @media screen and (max-width: $res-max-width){
+      width: 50%;
+      }
+      h3{
+        padding: 10px;
+        @media screen and (max-width: $res-max-width){
+          font-size: 12px;
+          }
+      }
+
+    &__button{
+      display: inline-block;
+      color: black;
+      font-size: 1em;
+      line-height: -moz-block-height;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      height: 50px;
+      width: 100%;
+      cursor: pointer;
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);/*影*/
+      -webkit-tap-highlight-color: transparent;
+      transition: .3s ease-out;/*変化を緩やかに*/
+      position: relative;
+
+      @media screen and (max-width: $res-max-width){
+        width: 50px;
+        font-size: 13px;
+        padding: 25px 10% 0px 10px;
+        }
+      &:hover{
+        opacity: 0.6;
+      }
+    }
+  }
+
+
+/*---------------------place-------------*/
+.place{
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  h2{
+    font-size: $font-m;
+    padding: 50px 0;
+    color: $redmain;
+    @media screen and (max-width: $res-max-width){
+      padding: 20px 0;
+      }
+      &::after{
+        content: "アクセス";
+        color: gray;
+        font-size: $after-text;
+        display: block;
+      }
+  }
+  &__toptext{
+    font-style:bold;
+    font-size:4vw;
+    @media screen and (max-width: $res-max-width){
+      font-size:3vw;
+      }
+  }
+  p{
+    font-size:$font-s;
+    margin: 10px;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    animation-name: LeftToRight;
+    animation-duration: 1s;
+    @media screen and (max-width: $res-max-width){
+      left: 0;
+      background-color: #525a165e;
+      color: white;
+      }
+  }
+
+  &__image{
+    height: 800px;
+    width: 100%;
+    background-image:url(../img/out2.jpg);
+    background-size: cover;
+  }
+  .map{
+    text-align: center;
+    margin: 5%;
+
+  }
+}
+
+
+footer{
+  height: 40px;
+  width: 100%;
+  background-color: $blackmain;
+  color: white;
+  display: flex;
+  line-height: 40px;
+  &__text{
+    @media screen and (max-width: $res-max-width){
+      font-size: 11px;
+      }
+  }
+}
+
+
+@keyframes BottomToUp{
+  0% {
+    opacity: 0;/* 透明 */
+    transform: translateY(100px);/* Y軸方向に50px */
+  }
+  100% {
+    opacity: 1;/* 不透明 */
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes RightToLeft {
+  0% {
+    opacity: 0;/* 透明 */
+    transform: translateX(100px);/* X軸方向に50px */
+  }
+  100% {
+    opacity: 1;/* 不透明 */
+    transform: translateX(0);
+  }
+}
+
+@keyframes LeftToRight {
+  0% {
+    opacity: 0;/* 透明 */
+    transform: translateX(-200px);/* X軸方向に50px */
+  }
+  100% {
+    opacity: 1;/* 不透明 */
+    transform: translateX(0);
+  }
+}
+
+@keyframes OpacityMove{
+  0% {
+    opacity: 0;/* 透明 */
+  }
+  100% {
+    opacity: 1;/* 不透明 */
+  }
+}
+
+
+/*---------------テーブル*/
+
+
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table tr{
+  border-bottom: solid 2px white;
+}
+
+table tr:last-child{
+  border-bottom: none;
+}
+
+table th{
+  position: relative;
+  text-align: left;
+  width: 30%;
+  background-color: #52c2d0;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  @media screen and (max-width: $res-max-width){
+    font-size: 10px;
+    }
+}
+
+table th:after{
+  display: block;
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top:calc(50% - 10px);
+  right:-10px;
+  border-left: 10px solid #52c2d0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+table td{
+  text-align: left;
+  width: 60%;
+  text-align: center;
+  background-color: #eee;
+  padding: 10px 0;
+  @media screen and (max-width: $res-max-width){
+    font-size: 10px;
+    padding: 0 10px;
+    }
+}
+
+.price_table{
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
