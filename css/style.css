@@ -582,7 +582,7 @@ header {
       .service__wifi__left {
         line-height: 20px;
         width: 100%;
-        height: 50%;
+        height: 55%;
         float: none;
         margin-top: 0px; } }
     .service__wifi__left h3 {
@@ -602,8 +602,8 @@ header {
       line-height: 20px; }
       @media screen and (max-width: 414px) {
         .service__wifi__left p {
-          font-size: 0.75em;
-          width: 100%; } }
+          width: 80%;
+          margin: auto auto; } }
   .service__wifi__right {
     height: 100%;
     width: 50%;
@@ -632,7 +632,6 @@ header {
     .service__wifi__right .img1 {
       transform: rotate(10deg);
       position: absolute;
-      top: 10%;
       left: 20%;
       z-index: 2; }
       @media screen and (max-width: 414px) {

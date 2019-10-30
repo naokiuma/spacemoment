@@ -704,7 +704,7 @@ header {
     @media screen and (max-width: $res-max-width){
       line-height: 20px;
       width: 100%;
-      height: 50%;
+      height: 55%;
       float: none;
       margin-top: 0px;
     }
@@ -727,8 +727,9 @@ header {
       letter-spacing: 1px;
       line-height: 20px;
       @media screen and (max-width: $res-max-width){
-        font-size: 0.75em;
-        width: 100%;
+        width: 80%;
+        margin: auto auto;
+
       }
     }
   }
@@ -762,7 +763,7 @@ header {
     .img1{
       transform: rotate(10deg);
       position: absolute;
-      top: 10%;
+      //top: 10%;
       left: 20%;
       z-index:2;
       @media screen and (max-width: $res-max-width){
