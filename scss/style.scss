@@ -56,7 +56,7 @@ ul li {
     right: 0;
     top: 0;
     height: 50px;
-    font-size: 1.3vw;
+    font-size: 12px;
     font-weight: bold;
     letter-spacing: 1px;
     @media screen and (max-width: $res-max-width){
@@ -304,17 +304,13 @@ header {
   z-index:10;
   font-style: oblique;
     .logo{
-      width: 40%;
-      padding-left: 3%;
-      float: left;
-      animation-name: LeftToRight;
-      animation-duration: 1s;
+      margin: auto 10px;
       font-family: 'Cabin Sketch', cursive; //Cabin Sketch
       line-height: -moz-block-height;
       font-size: 40px;
       @media screen and (max-width: $res-max-width){
         width:90%;
-        font-size: 10vw;
+        font-size: 20px;
       }
     }
   .menu {
@@ -342,12 +338,12 @@ header {
       line-height: 50px;
       padding-left: 10px;
       margin-left: 30px;
-      font-size: 1vw;
+      font-size: 12px;
       animation-name: RightToLeft;
       animation-duration: 1s;
       @media screen and (max-width: $res-max-width){
         float: none;
-        font-size: 20px;
+        font-size: 12px;
         margin: 20px 0px;
       }
       a{
@@ -423,9 +419,9 @@ header {
 .billboard{
   background-attachment: fixed;
   display: block;
-  height:1000px;
+  height:100vh;
   width: 100%;
-  background-image:url(../img/top.jpg);
+  background-image: linear-gradient( to right bottom, #e7e8e700, #23b0541c), url(../img/top.jpg);
   background-size: cover;
   position: relative;
     @media screen and (max-width: $res-max-width){
@@ -439,20 +435,20 @@ header {
   &__text{
     border-radius: 5%;
     font-size: $font-m;
+    line-height: 60px;
     font-style: italic;
     color: white;
     display: block;
     position: absolute;
     top: 10%;
-    left: 10%;
-    animation-name: BottomToUp;
-    animation-duration: 2s;
+    left: 5%;
     -webkit-text-stroke: 0.7px #000;
     @media screen and (max-width: $res-max-width){
       font-size:25px;
       top: 10%;
     }
 
+    /* もともとあった、afterテキスト
     &::after{
       content:"かけがえのない時間と空間を。";
       font-size: 30px;
@@ -461,31 +457,45 @@ header {
         font-size: 0.7em;;
       }
     }
+    */
+
+    .b-text__main{
+      animation-name: UpToBottom;
+      animation-duration: 2s;
+    }
+    .b-text__sub{
+      animation-name: BottomToUp;
+      animation-duration: 2s;
+      font-size:30px;
+      @media screen and (max-width: $res-max-width){
+        font-size: 20px;
+      }
+
+    }
   }
 
   &__news{
     display: block;
-    height: 17%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    position: absolute;
-    bottom: 0;
+    height: 200px;
+    background-color:white;
     text-align: center;
     font-style: oblique;
+    padding: 30px 0;
     @media screen and (max-width: $res-max-width){
-    height: 120px;
+    height: 140px;
     }
     h2{
       font-size: $font-m;
-      color: white;
-      margin: 10px 0;
+      color: black;
+      padding: 20px;
       @media screen and (max-width: $res-max-width){
       font-size: 3vw;
       }
     }
     li{
       font-size: $font-s;
-      color: white;
+      color: black;
       padding:5px 0;
       @media screen and (max-width: $res-max-width){
         font-size: 10px;
@@ -524,7 +534,7 @@ header {
       animation-duration: 1s;
     }
     h2{
-      font-size: $font-m;
+      font-size: 40px;
       margin: 75px 0;
       color: $redmain;
       @media screen and (max-width: $res-max-width){
@@ -632,7 +642,7 @@ header {
 
       }
     h2{
-      font-size: $font-m;
+      font-size: 40px;
       margin: 100px 0;
       text-align: center;
       color: $redmain;
@@ -696,7 +706,6 @@ header {
     height: 100%;
     width: 45%;
     float: left;
-    font-size: 40px;
     box-sizing: border-box;
     margin-top: 50px;
     animation-name: RightToLeft;
@@ -709,7 +718,7 @@ header {
       margin-top: 0px;
     }
     h3{
-      font-size: $font-m;
+      font-size: 40px;
       margin: 20px;
       padding: 50px;
       color: $redmain;
@@ -723,7 +732,7 @@ header {
     }
     p{
       font-size:$font-s;
-      margin: 10px;
+      margin: 20px;
       letter-spacing: 1px;
       line-height: 20px;
       @media screen and (max-width: $res-max-width){
@@ -820,7 +829,7 @@ header {
         height: 140%;
       }
       h3{
-        font-size: $font-m;
+        font-size: 40px;
         padding: 50px 0;
         text-align: center;
         color: white;
@@ -962,7 +971,7 @@ header {
       line-height: 20px;
       }
     h3{
-      font-size: $font-m;
+      font-size: 40px;
       padding: 50px;
       color: $redmain;
       @media screen and (max-width: $res-max-width){
@@ -1004,7 +1013,7 @@ header {
       }
   }
   &__culc h2{
-    font-size: $font-m;
+    font-size: 40px;
     padding: 50px 0 100px 0;
     text-align: center;
     @media screen and (max-width: $res-max-width){
@@ -1021,7 +1030,7 @@ header {
 
   &__top{
     h2{
-      font-size: $font-m;
+      font-size: 40px;
       padding: 50px 0;
       text-align: center;
       color: $redmain;
@@ -1218,13 +1227,25 @@ footer{
 @keyframes BottomToUp{
   0% {
     opacity: 0;/* 透明 */
-    transform: translateY(100px);/* Y軸方向に50px */
+    transform: translateY(100px);
   }
   100% {
     opacity: 1;/* 不透明 */
     transform: translateY(0);
   }
 }
+
+@keyframes UpToBottom{
+  0% {
+    opacity: 0;/* 透明 */
+    transform: translateY(-200px);
+  }
+  100% {
+    opacity: 1;/* 不透明 */
+    transform: translateY(0);
+  }
+}
+
 
 
 @keyframes RightToLeft {
