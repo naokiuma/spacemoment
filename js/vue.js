@@ -138,6 +138,7 @@ new Vue({
 })
 
 
+//価格帯の箇所。ーーーーーーーーーー
 
 Vue.component('all-price',{ //子
   props:['post'],
@@ -146,7 +147,8 @@ Vue.component('all-price',{ //子
   <tr>
   <th>{{post.content}}<br><span style="color:#bb352b;font-size:10px;">¥{{post.price}}</span></th>
   <td>{{post.disc}}</td>
-  <td class="price-post__button" v-bind:class="{button__active:post.choice_flg}"  v-on:click="$emit('emit-price')">
+  <td class="price-post__button" v-bind:class="{button__active:post.choice_flg}"  
+      v-on:click="$emit('emit-price')">
   click!
   </td>
   </tr>
@@ -205,7 +207,7 @@ new Vue({
 
 
 
-//場所のやつ。
+//所在地のやつ。
   new Vue({
     el:'.js-show',
     data:{

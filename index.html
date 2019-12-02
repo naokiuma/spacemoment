@@ -58,7 +58,7 @@
          <p class="error" v-if="error.name">{{ error.name }}</p><br>
         お問い合わせ内容<br>
         <textarea name="" rows="6" cols="40" placeholder="1000文字以内でご記入ください"  v-model="count"></textarea><br>
-        文字数 {{ charaCount }}/1000
+        <span class="form-count">文字数 {{ charaCount }}/1000</span>
         <br>
         <input  :disabled="input" v-on:click="formsubmit" type="submit" value="確認"><br><!--送信ぼたん-->
         <button class="form__modal__close" name="button" v-on:click="isActive = false">閉じる</button><br>
@@ -317,17 +317,6 @@
         ></all-price>
 
         </div>
-
-
-        <!--
-        <div class="wifi-price">
-        <h3>Free（※デフォルトサービス）</h3>
-        <button class="wifi-price__button">
-          Wifi
-        </button>
-        </div>
-        -->
-
 
       </section>
 
