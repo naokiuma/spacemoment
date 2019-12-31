@@ -81,9 +81,9 @@ methods:{
 }
 })
 
+
+
 /*About。上に動く。*/
-
-
 new Vue({
   el:'.js-upto-slide',
   data:{
@@ -145,11 +145,10 @@ Vue.component('all-price',{ //子
   template:`
   <table>
   <tr>
-  <th>{{post.content}}<br><span style="color:#bb352b;font-size:10px;">¥{{post.price}}</span></th>
-  <td>{{post.disc}}</td>
+  <th>{{post.content}}<br><span style="color:gray;font-size:12px;">¥{{post.price}}</span></th>
   <td class="price-post__button" v-bind:class="{button__active:post.choice_flg}"  
       v-on:click="$emit('emit-price')">
-  click!
+     ¥ {{post.price}} / 1day
   </td>
   </tr>
   </div>

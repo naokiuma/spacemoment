@@ -99,20 +99,20 @@
 </header>
 
 
-
+<div style="position: relative;">
 <section class="billboard" id="unq_top">
   <div class="billboard__mask">
     <div class="billboard__text">
       <h2 class="b-text__main">We Provide<br>various space and moment.</h2>
-      <h2 class="b-text__sub">かけがえのない時間を提供します。</h2>
     </div>
 
   </div>
 </section>
+</div>
     <section class="billboard__news">
       <h2>- NEWS -</h2>
       <ul>
-        <li><time>2019/01/01</time>本年もよろしこお願いいたします。</li>
+        <li><time>2019/01/01</time>本年もよろしくお願いいたします。</li>
         <li><time>2019/03/25</time>【4月中】初回キャンペーン実施します。</li>
         <li><time>2019/05/05</time>子供も大人も遊べるスペースイベントを行います。</li>
       </ul>
@@ -123,12 +123,11 @@
 
 <section class="scene js-upto-slide" id="unq_about">
   <div class="scene__text" v-show="isActiveup">
-    <h2>- About -</h2>
-    <p>オンラインで誰もが繋がる時代。<br>共通の目的、趣味を持った人たちで集まる価値はより高まっています。<br>
-      space ＆ momentはゲーム大会、立食パーティ、商談、ミーティング、新商品販売イベントなど、<br>
-      様々なイベントのためのスペースを提供します。<br>
-      <br>
-      インターネットネットワーク、ゲーム、フードなど<br>イベントを盛り上げる各種サービスも常備しています。<br>
+    <h2>-About-</h2>
+    <p>オンラインで誰もが繋がる時代。<br>
+      共通の目的や趣味を持った人たちと集まる価値がより高まっています。<br>
+      Space ＆ Momentはゲーム、パーティ、ミーティングなど<br>
+      様々な、人が集まるイベントのためのスペースを提供します。<br>
       <br>
     </p>
   </div>
@@ -162,7 +161,7 @@
 
   </div>
   <div class="service__explain">
-    <h2>Wifi、フード、ゲーム。<br>3つのサービスを提供します。</h2>
+    <h2>集まったみんなで楽しむフード、ゲーム、インターネット。<br>3つのサービスを提供します。</h2>
     <div class="service__explain__img">
         <img src="img/wif-icon.png" alt="">
         <img src="img/food-icon.png" alt="">
@@ -172,21 +171,19 @@
 
   <section class="service__wifi js-left-slide" id="unq_wifi">
     <div class="service__wifi__left" v-show="isActive" >
-      <h3> Wifi <span class="add_price">※一人当たり¥300円/day</span></h3>
-
-      <p>常時接続インターネットサービス<br>
-      <br>
-      高速インターネットサービスを提供します。<br>
+      <h2><img class="each_img" src="img/wif-icon.png" alt="">ーWifiー</h2>
+      <p>一人あたり<span class="add_price">300</span>円（税抜）/1day</p>
+      <p>
       Wifiはもちろん、有線接続にも対応。<br>
       イベント中のSNSシェアや、ゲームイベントにもご利用ください。<br>
-      <br>
-      <p>設備レンタル<span style="color:red;">無料！</span><br>
 
       Wifiサービスをお申し込みの場合<br>
-      追加料金なしで下記の機材もご利用いただけます。<br>
+      下記の機材もご利用いただけます。<br>
       <br>
       ・PC(Windows/Mac)<br>
-      ・投影用巨大モニター<br>
+      ・投影用大画面モニター<br>
+      <br><br>
+      
       </p>
     </div>
     <div class="service__wifi__right" v-show="isActive">
@@ -197,10 +194,19 @@
 
 
   <section class="service__catering" id="catering">
+
     <div class="service__catering__left">
 
-    <div class="service__catering__left-text" >
-      <h3> Food <span class="add_price">¥1000/一人</span></h3>
+    <div class="service__catering__left-text">
+      <h2><img class="each_img" src="img/food-icon.png" alt="">ーFoodー</h2>
+      <p style="color:white;">一人あたり<span style="color:white;" class="add_price">1000</span>円（税抜）/1day</p>
+
+      <div class="card" v-on:click="choice1">
+         Drink
+      </div>
+      <div class="card" v-on:click="choice2">
+         Snack
+      </div>
         <template v-if="menu == '1'">
         <div class="food_menu">
         <h4>【ドリンクメニュー】<h4>
@@ -246,49 +252,43 @@
     </div>
     </div>
 
-
-    <div class="service__catering__right">
-
-      <div class="card card1" v-on:click="choice1">
-        Drink
-      </div>
-
-      <div class="card card2" v-on:click="choice2">
-        Snack
-      </div>
-    </div>
-
   </section>
 
+  <!--ゲームコンテンツ-->
   <section class="service__game" id="unq_game" >
-      <div class="service__game__img">
-        <ul>
-          <li><img class="" src="img/game1.jpg" alt="">
-          <img class="" src="img/game2.jpg" alt=""></li>
-          <li><img class="" src="img/game3.jpg" alt="">
-          <img class="" src="img/game4.jpg" alt=""></li>
-          <li><img class="" src="img/game5.jpg" alt="">
-          <img class="" src="img/game6.jpg" alt=""></li>
-        </ul>
-      </div>
-      <div class="service__game__text">
-        <h3> Game <span class="add_price">¥500/一人</span></h3>
-        <p>テレビゲーム/ボードゲームで<br>イベントを盛り上げよう。<br>
-        100種類のボードゲーム、<br>
-        <br>
-        最新ゲームから<br>
-        ファミコン世代にもオススメの<br>
-        レトロゲームも各種取り揃えています。<br>
-        <br>
+  <div class="service__game__wrapper">
+
+    <div class="service__game__text">
+     <h2><img class="each_img" src="img/game-icon.png" alt="">ーGameー</h2>
+     <p>一人あたり<span class="add_price">500</span>円（税抜）/1day</p>
+      <p>テレビゲーム/ボードゲームで<br>イベントを盛り上げよう。<br>
+       100種類のボードゲーム、<br>
+       最新ゲームからファミコン世代にもオススメの
+       レトロゲームも各種取り揃えています。<br>
+       <br>
         <p>ゲーム例：<br>
-        FC/SFC/64/GC/Wii/Switch<br>
-        PS/PS2/PS3/PS4<br>
-        メガドライブ/セガサターン/DC<br>
-        バーチャルボーイなどなど。<br>
-        <span style="color:red;">※ラインナップはお問い合わせください。</span>
-        <br>
+          FC/SFC/64/GC/Wii/Switch<br>
+          PS/PS2/PS3/PS4<br>
+          メガドライブ/セガサターン/DC<br>
+          バーチャルボーイなどなど。<br>
+        <span>※ラインナップはお問い合わせください。</span>
+        <br><br>
         </p>
-      </div>
+    </div>
+
+    
+      <div class="service__game__img">
+        <div class="service__gameimg-wrapper">
+          <img class="" src="img/game1.jpg" alt="">
+          <img class="" src="img/game2.jpg" alt="">
+          <img class="" src="img/game3.jpg" alt="">
+          <img class="" src="img/game4.jpg" alt="">
+          <img class="" src="img/game5.jpg" alt="">
+          <img class="" src="img/game6.jpg" alt="">
+        </div>
+    </div>
+   </div>
+
   </section>
 
 
@@ -327,7 +327,8 @@
       <h2>-Access-</h2>
   <div class="place__image">
     <div class="js-show">
-        <p v-show="isActiveup"><span class="place__toptext">全ての最寄駅から徒歩10分。</span><br>
+        <p v-show="isActiveup">
+        <span class="place__toptext">全ての最寄駅から徒歩10分。</span><br>
         歩いていても、バスで来ても、車で来ても問題なし。<br>
         スペース間の移動はキックボード、自転車、バイクもお貸出しします。駐車場完備、無料。<br>
         <br>
@@ -337,7 +338,7 @@
         0-0-0 superurtlabuilding 2F-50F
         Tel:00-0000-0000
 
-        <br>
+        </p>
     </div>
 
   </div>
@@ -358,7 +359,6 @@
 
 
 
-  <!--<script type="text/babel" src="js/app.js"></script>リアクト練習。jsファイルのタイプはtext/babel！-->
   <script src="js/vue.js"></script>
   </body>
 </html>

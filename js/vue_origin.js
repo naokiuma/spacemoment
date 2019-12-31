@@ -120,8 +120,6 @@ Vue.component('all-price',{ //子
 })
 
 
-
-
 new Vue({
   el: '#vue-price',//親
   data:{

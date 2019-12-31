@@ -5,12 +5,10 @@ input, button, textarea, select {
   appearance: none; }
 
 .add_price {
-  font-size: 10px;
+  font-size: 160%;
   color: black;
   display: inline-block;
-  border: 1px solid #c5a8a1;
-  padding: 5px;
-  background-color: #e6e669; }
+  margin: 5px; }
 
 ul li {
   list-style: none;
@@ -19,7 +17,7 @@ ul li {
 * {
   margin: 0px;
   padding: 0px;
-  font-family: 'Hiragino Kaku Gothic W5 JIS2004',sans-serif; }
+  font-family: 'sans-serif,Hiragino Kaku Gothic W5 JIS2004'; }
 
 /*--------------フォーム--------------*/
 .form {
@@ -37,8 +35,9 @@ ul li {
     height: 50px;
     font-size: 12px;
     font-weight: bold;
-    letter-spacing: 1px; }
-    @media screen and (max-width: 414px) {
+    letter-spacing: 1px;
+    font-family: 'Cabin Sketch', cursive; }
+    @media screen and (max-width: 415px) {
       .form__btn {
         height: 70px;
         width: 200px;
@@ -60,7 +59,7 @@ ul li {
     transition: 1s;
     animation-name: OpacityMove;
     box-shadow: 4px 4px; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       .form__modal {
         width: 90%;
         top: 10%;
@@ -69,18 +68,19 @@ ul li {
     .form__modal h2 {
       font-size: 20px;
       margin: 50px auto 50px auto; }
-      @media screen and (max-width: 414px) {
+      @media screen and (max-width: 415px) {
         .form__modal h2 {
           font-size: 16px; } }
     .form__modal__close {
       background: white;
-      padding: 5px 15px;
+      padding: 10px 15px;
       margin: 30px auto;
       position: absolute;
       font-size: 12px;
       top: 2%;
-      left: 5%; }
-      @media screen and (max-width: 414px) {
+      left: 5%;
+      letter-spacing: 2px; }
+      @media screen and (max-width: 415px) {
         .form__modal__close {
           left: 4%;
           top: 85%; } }
@@ -119,7 +119,7 @@ ul li {
   /* アニメーションの最後の状態を維持する */ }
   .confirm p {
     margin: 2%; }
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 415px) {
     .confirm {
       width: 90%;
       top: 10%;
@@ -166,7 +166,7 @@ ul li {
   /* アニメーションのスピード */
   animation-fill-mode: forwards;
   /* アニメーションの最後の状態を維持する */ }
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 415px) {
     .post_finish {
       width: 90%;
       top: 10%;
@@ -223,7 +223,7 @@ input[type="submit"] {
 textarea {
   transition: 0.6s;
   margin: 20px 20px 0 20px; }
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 415px) {
     textarea {
       width: 80%;
       margin: auto; } }
@@ -242,6 +242,7 @@ textarea {
 /*-------------ヘッダー---------------*/
 header {
   display: flex;
+  justify-content: space-between;
   height: 50px;
   width: 100%;
   background-color: #D1ECEFDE;
@@ -253,14 +254,14 @@ header {
     font-family: 'Cabin Sketch', cursive;
     line-height: -moz-block-height;
     font-size: 40px; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       header .logo {
         width: 90%;
         font-size: 20px; } }
   header .menu {
     width: 60%;
     height: 50px; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       header .menu {
         display: block;
         position: absolute;
@@ -283,7 +284,7 @@ header {
       font-size: 12px;
       animation-name: RightToLeft;
       animation-duration: 1s; }
-      @media screen and (max-width: 414px) {
+      @media screen and (max-width: 415px) {
         header .menu li {
           float: none;
           font-size: 12px;
@@ -291,7 +292,8 @@ header {
       header .menu li a {
         text-decoration: none;
         color: #1a1a1a;
-        transition: 1s; }
+        transition: 1s;
+        font-family: 'Cabin Sketch', cursive; }
         header .menu li a:hover {
           border-bottom: 4px solid #bb352b;
           color: red; }
@@ -308,7 +310,7 @@ header {
   margin: 5px;
   height: 32px;
   z-index: 3; }
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 415px) {
     .menu__trigger {
       display: inline-block; } }
   .menu__trigger span {
@@ -321,7 +323,7 @@ header {
     height: 4px;
     background-color: #1a1a1a;
     border-radius: 4px; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       .menu__trigger span {
         left: -20px; } }
     .menu__trigger span:nth-of-type(1) {
@@ -348,19 +350,16 @@ header {
   background-image: linear-gradient(to right bottom, #e7e8e700, #23b0541c), url(../img/top.jpg);
   background-size: cover;
   position: relative; }
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 415px) {
     .billboard {
       background-image: url(../img/top-sm.png);
       height: 600px;
       background-attachment: inherit; } }
   .billboard__mask {
     height: 100%; }
-    @media screen and (max-width: 414px) {
-      .billboard__mask {
-        background-color: #ffffff1a; } }
   .billboard__text {
     background-color: #ffffffc4;
-    padding: 30px 50px;
+    padding: 20px 40px;
     font-size: 30px;
     line-height: 60px;
     font-style: italic;
@@ -369,103 +368,113 @@ header {
     position: absolute;
     top: 10%;
     left: 5%;
-    -webkit-text-stroke: 0.7px #000; }
-    @media screen and (max-width: 414px) {
+    -webkit-text-stroke: 0.7px #000;
+    border-radius: 10px; }
+    @media screen and (max-width: 415px) {
       .billboard__text {
         font-size: 20px;
         top: 10%;
         background-color: #fff0;
         left: 0;
-        padding: 10px; } }
+        padding: 10px;
+        color: white; } }
     .billboard__text .b-text__main {
       animation-name: UpToBottom;
-      animation-duration: 2s; }
-    .billboard__text .b-text__sub {
-      animation-name: BottomToUp;
       animation-duration: 2s;
-      font-size: 30px; }
-      @media screen and (max-width: 414px) {
-        .billboard__text .b-text__sub {
-          font-size: 16px;
-          margin-top: 150px; } }
+      font-weight: bold; }
   .billboard__news {
     display: block;
     width: 100%;
-    height: 200px;
-    background-color: white;
     text-align: center;
     font-style: oblique;
     padding: 30px 0; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       .billboard__news {
-        height: 140px; } }
+        height: 160px; } }
     .billboard__news h2 {
-      font-size: 30px;
+      border-top: 2px solid black;
+      border-bottom: 2px solid black;
+      width: 20%;
+      font-size: 20px;
       color: black;
-      padding: 20px; }
-      @media screen and (max-width: 414px) {
+      padding: 20px;
+      margin: 10px auto 20px auto; }
+      @media screen and (max-width: 415px) {
         .billboard__news h2 {
-          font-size: 3vw; } }
+          font-size: 3vw;
+          width: 40%; } }
     .billboard__news li {
       font-size: 15px;
       color: black;
       padding: 5px 0; }
-      @media screen and (max-width: 414px) {
+      @media screen and (max-width: 415px) {
         .billboard__news li {
           font-size: 10px; } }
       .billboard__news li time {
         margin: 0 5px; }
 
+.b-text__sub {
+  animation-name: BottomToUp;
+  animation-duration: 2s;
+  font-size: 20px;
+  position: absolute;
+  bottom: 130px;
+  left: auto;
+  font-weight: lighter;
+  background: #ffffffc4;
+  border-radius: 50px 0;
+  padding: 50px; }
+  @media screen and (max-width: 415px) {
+    .b-text__sub {
+      font-size: 16px;
+      margin-top: 150px; } }
+
 /*シーン*/
 .scene {
   display: block;
-  height: 1200px;
+  height: 800px;
   width: 100%;
   margin: auto;
   position: relative;
   background: radial-gradient(#FFF, #9acbf5); }
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 415px) {
     .scene {
-      height: 900px; } }
+      height: 700px; } }
   .scene__text {
-    position: absolute;
-    top: 20%;
-    left: 35%;
     animation-name: BottomToUp;
-    animation-duration: 1s; }
-    @media screen and (max-width: 414px) {
+    animation-duration: 1s;
+    margin: auto;
+    padding: 15%;
+    text-align: center; }
+    @media screen and (max-width: 415px) {
       .scene__text {
-        position: absolute;
-        top: 20%;
-        left: 5%;
-        animation-name: BottomToUp;
-        animation-duration: 1s; } }
+        padding: 150px 50px; } }
     .scene__text h2 {
       font-size: 40px;
       margin: 75px 0;
-      color: #bb352b; }
-      @media screen and (max-width: 414px) {
+      color: black;
+      font-style: italic; }
+      @media screen and (max-width: 415px) {
         .scene__text h2 {
-          font-size: 20px;
+          font-size: 24px;
+          margin: 75px 0 50px 0;
           text-align: center; } }
-      .scene__text h2::after {
+      .scene__text h2:after {
         content: "Space and Momentとは";
         color: gray;
         font-size: 0.5em;
         display: block; }
-        @media screen and (max-width: 414px) {
-          .scene__text h2::after {
-            font-size: 20px; } }
+        @media screen and (max-width: 415px) {
+          .scene__text h2:after {
+            font-size: 16px; } }
     .scene__text p {
       font-size: 15px;
-      width: 70%;
       height: 100%;
-      text-shadow: 1px 1px white;
       letter-spacing: 1px;
-      line-height: 30px; }
-      @media screen and (max-width: 414px) {
+      line-height: 25px; }
+      @media screen and (max-width: 415px) {
         .scene__text p {
-          font-size: 10px;
+          font-size: 14px;
           line-height: 20px;
           width: 100%; } }
   .scene__circle {
@@ -475,7 +484,7 @@ header {
     height: 200px;
     width: 200px;
     position: absolute; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       .scene__circle {
         height: 100px;
         width: 100px;
@@ -495,55 +504,64 @@ header {
 
 .circle1 {
   top: 15%;
-  left: 10%;
+  left: 5%;
   background-image: url(../img/game.png);
   background-size: cover; }
 
 .circle2 {
   top: 15%;
-  right: 10%;
+  right: 5%;
   background-image: url(../img/beer.png);
   background-size: cover; }
 
 .circle3 {
   bottom: 15%;
-  left: 12%;
+  left: 5%;
   background-image: url(../img/necty.png);
   background-size: cover; }
 
 .circle4 {
   bottom: 15%;
-  right: 12%;
+  right: 5%;
   background-image: url(../img/cart.png);
   background-size: cover; }
 
 .service {
   width: 100%;
+  margin-bottom: 100px;
   /*サービスエクスプレイン*/ }
+  @media screen and (max-width: 415px) {
+    .service {
+      margin-bottom: 20px; } }
   .service__top {
     width: 100%;
     margin: auto; }
     .service__top h2 {
       font-size: 40px;
-      margin: 100px 0;
+      margin: 75px 0;
+      color: black;
       text-align: center;
-      color: #bb352b; }
-      @media screen and (max-width: 414px) {
+      font-style: italic; }
+      @media screen and (max-width: 415px) {
         .service__top h2 {
-          font-size: 30px;
-          margin: 20px 0; } }
-      .service__top h2::after {
+          font-size: 24px;
+          margin: 75px 0 50px 0;
+          text-align: center; } }
+      .service__top h2:after {
         content: "提供サービス";
         color: gray;
         font-size: 0.5em;
         display: block; }
+        @media screen and (max-width: 415px) {
+          .service__top h2:after {
+            font-size: 16px; } }
   .service__explain {
     text-align: center;
     height: 400px;
     overflow: hidden;
     background-size: cover;
     background-attachment: fixed; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       .service__explain {
         height: 250px; } }
     .service__explain__img {
@@ -553,59 +571,68 @@ header {
       .service__explain__img img {
         width: 100px;
         margin: 0 5%; }
-        @media screen and (max-width: 414px) {
+        @media screen and (max-width: 415px) {
           .service__explain__img img {
             width: 50px;
             height: 50px; } }
     .service__explain h2 {
       margin: 30px; }
-      @media screen and (max-width: 414px) {
+      @media screen and (max-width: 415px) {
         .service__explain h2 {
           font-size: 1em; } }
 
 .service__wifi {
-  height: 800px;
+  height: 600px;
   overflow: hidden;
   width: 100%;
-  background: linear-gradient(to bottom, #90EC9280, #5FB55F); }
-  @media screen and (max-width: 414px) {
+  background: radial-gradient(#FFF, #9acbf5); }
+  @media screen and (max-width: 415px) {
     .service__wifi {
       height: 900px; } }
   .service__wifi__left {
-    text-align: center;
     height: 100%;
-    width: 45%;
+    width: 50%;
     float: left;
     box-sizing: border-box;
     margin-top: 50px;
     animation-name: RightToLeft;
     animation-duration: 1s; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       .service__wifi__left {
         line-height: 20px;
         width: 100%;
-        height: 55%;
-        float: none;
-        margin-top: 0px; } }
-    .service__wifi__left h3 {
+        height: 40%;
+        float: none; } }
+    .service__wifi__left h2 {
+      text-align: center;
       font-size: 40px;
-      margin: 20px;
-      padding: 50px;
-      color: #bb352b; }
-      .service__wifi__left h3::after {
-        content: "高速インターネット";
+      margin: 40px 0;
+      color: black;
+      font-style: italic; }
+      @media screen and (max-width: 415px) {
+        .service__wifi__left h2 {
+          font-size: 24px;
+          text-align: center;
+          margin: 75px 0 40px 0; } }
+      .service__wifi__left h2::after {
+        content: "インターネットサービス";
         color: gray;
         font-size: 0.5em;
         display: block; }
+        @media screen and (max-width: 415px) {
+          .service__wifi__left h2::after {
+            font-size: 16px; } }
     .service__wifi__left p {
       font-size: 15px;
       margin: 20px;
       letter-spacing: 1px;
-      line-height: 20px; }
-      @media screen and (max-width: 414px) {
+      line-height: 25px;
+      text-align: center; }
+      @media screen and (max-width: 415px) {
         .service__wifi__left p {
           width: 80%;
-          margin: auto auto; } }
+          margin: auto;
+          font-size: 14px; } }
   .service__wifi__right {
     height: 100%;
     width: 50%;
@@ -613,7 +640,7 @@ header {
     box-sizing: border-box;
     position: relative;
     margin-top: 100px; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       .service__wifi__right {
         height: 50%;
         width: 100%;
@@ -623,7 +650,7 @@ header {
       box-shadow: 12px 12px;
       transition: 0.5s;
       width: 55%; }
-      @media screen and (max-width: 414px) {
+      @media screen and (max-width: 415px) {
         .service__wifi__right img {
           float: none;
           text-align: center; } }
@@ -636,7 +663,7 @@ header {
       position: absolute;
       left: 20%;
       z-index: 2; }
-      @media screen and (max-width: 414px) {
+      @media screen and (max-width: 415px) {
         .service__wifi__right .img1 {
           transform: none;
           position: relative;
@@ -647,27 +674,29 @@ header {
       left: 5%; }
 
 .service__catering {
-  height: 800px;
-  overflow: hidden;
-  padding: 100px 0; }
-  @media screen and (max-width: 414px) {
+  height: 900px;
+  overflow: hidden; }
+  @media screen and (max-width: 415px) {
     .service__catering {
-      height: 600px;
-      padding: 30px 0;
+      height: 800px;
       background-image: url(../img/catering.jpg);
       background-size: cover;
       background-attachment: fixed; } }
   .service__catering .food_menu {
     animation-name: BottomToUp;
-    animation-duration: 1s; }
+    animation-duration: 1s;
+    padding: 30px; }
+    @media screen and (max-width: 415px) {
+      .service__catering .food_menu li {
+        font-size: 12px; } }
   .service__catering__left {
     height: 100%;
-    width: 80%;
+    width: 100%;
     background-image: url(../img/catering.jpg);
     background-size: cover;
     background-attachment: fixed;
     float: left; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       .service__catering__left {
         width: 100%;
         height: 70%;
@@ -675,171 +704,205 @@ header {
         background-image: none; } }
     .service__catering__left-text {
       height: 100%;
-      width: 80%;
+      width: 100%;
       display: block;
-      background-color: rgba(0, 0, 50, 0.2);
-      margin: auto; }
-      @media screen and (max-width: 414px) {
+      background-color: rgba(51, 35, 20, 0.5);
+      margin: auto;
+      text-align: center; }
+      @media screen and (max-width: 415px) {
         .service__catering__left-text {
           height: 140%; } }
-      .service__catering__left-text h3 {
-        font-size: 40px;
-        padding: 50px 0;
+      .service__catering__left-text h2 {
+        font-style: italic;
         text-align: center;
+        font-size: 40px;
+        padding-top: 100px;
         color: white; }
-        @media screen and (max-width: 414px) {
-          .service__catering__left-text h3 {
-            padding: 25px 0; } }
-        .service__catering__left-text h3::after {
+        @media screen and (max-width: 415px) {
+          .service__catering__left-text h2 {
+            font-size: 24px;
+            text-align: center;
+            margin: 0px auto 40px auto;
+            padding-top: 75px; } }
+        .service__catering__left-text h2:after {
           content: "料理提供サービス";
           color: white;
           font-size: 0.5em;
           display: block; }
+          @media screen and (max-width: 415px) {
+            .service__catering__left-text h2:after {
+              font-size: 16px; } }
       .service__catering__left-text h4 {
         font-size: 20px;
         text-align: center;
         color: white;
         margin: 10px; }
-        @media screen and (max-width: 414px) {
+        @media screen and (max-width: 415px) {
           .service__catering__left-text h4 {
             font-size: 15px; } }
-      .service__catering__left-text p, .service__catering__left-text li {
+      .service__catering__left-text li {
         font-size: 15px;
-        margin: 10px;
+        margin: 12px;
         color: white;
         text-align: center; }
-        @media screen and (max-width: 414px) {
-          .service__catering__left-text p, .service__catering__left-text li {
+        @media screen and (max-width: 415px) {
+          .service__catering__left-text li {
             font-size: 10px; } }
   .service__catering__right {
     position: relative;
     height: 100%;
     width: 20%;
-    float: left; }
-    .service__catering__right .card {
-      display: block;
-      width: 300px;
-      height: 200px;
-      background-color: rgba(0, 0, 255, 0.1);
-      border: solid 1px;
-      font-family: 'Cabin Sketch', cursive;
-      font-size: 70px;
-      color: yellow; }
-      @media screen and (max-width: 414px) {
-        .service__catering__right .card {
-          width: 80%;
-          height: 100px;
-          font-size: 20px; } }
-      .service__catering__right .card:hover {
-        opacity: 0.8; }
-    .service__catering__right .card1 {
-      position: absolute;
-      right: 50px;
-      top: 100px;
-      background-image: url(../img/beer-cart.jpg);
-      background-size: cover; }
-      @media screen and (max-width: 414px) {
-        .service__catering__right .card1 {
-          top: -400px;
-          left: 10px; } }
-    .service__catering__right .card2 {
-      position: absolute;
-      right: 50px;
-      top: 350px;
-      bottom: 100px;
-      background-image: url(../img/snack.jpg);
-      background-size: cover; }
-      @media screen and (max-width: 414px) {
-        .service__catering__right .card2 {
-          top: -275px;
-          left: 10px; } }
+    float: right;
+    /*
+      .card{
+        display: block;
+        width:300px;
+        height: 200px;
+        background-color: rgba(0, 0, 500, 0.1);
+        border: solid 1px;
+        font-family: 'Cabin Sketch', cursive; //Cabin Sketch
+        font-size: 70px;
+        color: yellow;
+        */ }
+    @media screen and (max-width: 415px) {
+      .service__catering__right {
+        width: 80%;
+        height: 100px;
+        font-size: 20px; } }
+    .service__catering__right:hover {
+      opacity: 0.8; }
+  .service__catering .card1 {
+    position: absolute;
+    top: 100px;
+    background-image: url(../img/beer-cart.jpg);
+    background-size: cover; }
+    @media screen and (max-width: 415px) {
+      .service__catering .card1 {
+        top: -200px;
+        left: 10px; } }
+  .service__catering .card2 {
+    position: absolute;
+    top: 310px;
+    bottom: 100px;
+    background-image: url(../img/snack.jpg);
+    background-size: cover; }
+    @media screen and (max-width: 415px) {
+      .service__catering .card2 {
+        top: -75px;
+        left: 10px; } }
+
+.card {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  background-color: rgba(247, 242, 242, 0.29);
+  border: solid 1px;
+  font-size: 30px;
+  line-height: 50px;
+  color: yellow;
+  margin-top: 30px; }
+  @media screen and (max-width: 415px) {
+    .card {
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 20px; } }
+
+.service__gameimg-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
 
 .service__game {
-  height: 900px;
   width: 100%;
-  display: block; }
+  display: block;
+  margin-top: 75px; }
+  .service__game__wrapper {
+    display: flex; }
+    @media screen and (max-width: 415px) {
+      .service__game__wrapper {
+        flex-wrap: wrap; } }
   .service__game__img {
-    float: left;
     width: 60%; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       .service__game__img {
-        width: 40%;
+        width: 100%;
         padding: 50px 0; } }
-    .service__game__img ul {
-      text-align: center;
-      margin-top: 10%; }
     .service__game__img img {
-      width: 320px;
-      height: 210px;
+      width: 250px;
       transition: 0.5s;
       margin: 3%;
       max-width: 370px;
       max-height: 210px; }
-      @media screen and (max-width: 414px) {
+      @media screen and (max-width: 415px) {
         .service__game__img img {
-          width: 100%;
-          height: 100px;
+          width: 40%;
+          height: auto;
           display: block; } }
       .service__game__img img:hover {
         border-radius: 10%;
         transition: 0.5s;
         transform: scale(1.1); }
   .service__game__text {
-    float: right;
     width: 40%;
-    height: 60%;
-    padding-top: 100px;
+    padding: 50px auto;
     display: block;
     text-align: center;
     animation-name: RightToLeft;
-    animation-duration: 1s; }
-    @media screen and (max-width: 414px) {
+    animation-duration: 1s;
+    background-color: #eed6d685; }
+    @media screen and (max-width: 415px) {
       .service__game__text {
-        padding-top: 50px;
-        width: 50%;
-        margin: 10px 0 30px 20px;
+        padding: 40px;
+        width: 80%;
+        margin: auto;
         line-height: 20px; } }
-    .service__game__text h3 {
+    .service__game__text h2 {
+      font-style: italic;
       font-size: 40px;
-      padding: 50px;
-      color: #bb352b; }
-      @media screen and (max-width: 414px) {
-        .service__game__text h3 {
-          padding: 100px 0; } }
-      .service__game__text h3::after {
+      padding: 50px; }
+      @media screen and (max-width: 415px) {
+        .service__game__text h2 {
+          padding: 10px 0;
+          font-size: 24px; } }
+      .service__game__text h2:after {
         content: "ボードゲーム/テレビゲーム";
         color: gray;
-        font-size: 10px;
+        font-size: 0.5em;
         display: block; }
+        @media screen and (max-width: 415px) {
+          .service__game__text h2:after {
+            font-size: 16px; } }
     .service__game__text p {
       font-size: 15px;
-      margin: 10px;
+      margin: 10px 30px;
       letter-spacing: 1px;
-      line-height: 20px; }
-      @media screen and (max-width: 414px) {
+      line-height: 25px; }
+      @media screen and (max-width: 415px) {
         .service__game__text p {
-          font-size: 12px; } }
+          font-size: 14px; } }
 
 /*----------------------priceのとこ-------------*/
 .service__price {
   height: 850px;
-  background: linear-gradient(to bottom, #EAF3F3, #5FE65F);
+  background: radial-gradient(#FFF, #9acbf5);
   animation-name: RightToLeft;
   animation-duration: 1s;
   font-family: "Montserrat",'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','ヒラギノ丸ゴ Pro W4','Hiragino Maru Gothic Pro',游ゴシック体,'Yu Gothic',YuGothic,sans-serif; }
   .service__price p {
     text-align: center;
     font-size: 20px; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       .service__price p {
         font-size: 15px; } }
   .service__price__culc h2 {
-    font-size: 40px;
+    font-size: 30px;
     padding: 50px 0 100px 0;
     text-align: center; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       .service__price__culc h2 {
-        padding: 35px 0 70px 0; } }
+        padding: 35px 0 70px 0;
+        font-size: 20px; } }
     .service__price__culc h2::after {
       content: "※一人当たり/1日あたりの金額です";
       color: gray;
@@ -849,27 +912,31 @@ header {
     font-size: 40px;
     padding: 50px 0;
     text-align: center;
-    color: #bb352b; }
-    @media screen and (max-width: 414px) {
+    font-style: italic; }
+    @media screen and (max-width: 415px) {
       .service__price__top h2 {
-        padding: 75px 0 75px 0; } }
-    .service__price__top h2::after {
+        padding: 75px 0 75px 0;
+        font-size: 24px; } }
+    .service__price__top h2:after {
       content: "値段";
       color: gray;
       font-size: 0.5em;
       display: block; }
+      @media screen and (max-width: 415px) {
+        .service__price__top h2:after {
+          font-size: 16px; } }
 
 .wifi-price {
   text-align: center;
   width: 33%;
   float: left; }
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 415px) {
     .wifi-price {
       width: 100%;
       margin-bottom: 75px; } }
   .wifi-price h3 {
     padding: 10px; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       .wifi-price h3 {
         font-size: 12px; } }
   .wifi-price__button {
@@ -886,7 +953,7 @@ header {
     /*影*/
     -webkit-tap-highlight-color: transparent;
     position: relative; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       .wifi-price__button {
         width: 130px; } }
     .wifi-price__button::after {
@@ -901,18 +968,26 @@ header {
       border-radius: 10px;
       z-index: 5; }
 
+.each_img {
+  width: 50px;
+  height: 50px; }
+  @media screen and (max-width: 415px) {
+    .each_img {
+      width: 30px;
+      height: 30px; } }
+
 .button__active::after {
   content: "Checked!";
   font-size: 0.5em;
-  color: red;
+  color: yellow;
   position: absolute;
-  bottom: -10px;
+  bottom: 10px;
   right: -30px;
   animation-name: RightToLeft;
   animation-duration: 1s;
   transition: 1s;
   background-color: #87ceebcc;
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
   z-index: 2; }
 
@@ -920,12 +995,12 @@ header {
   width: 33%;
   float: left;
   text-align: center; }
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 415px) {
     .price-post {
       width: 50%; } }
   .price-post h3 {
     padding: 10px; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       .price-post h3 {
         font-size: 12px; } }
   .price-post__button {
@@ -943,12 +1018,13 @@ header {
     -webkit-tap-highlight-color: transparent;
     transition: .3s ease-out;
     /*変化を緩やかに*/
-    position: relative; }
-    @media screen and (max-width: 414px) {
+    position: relative;
+    line-height: 50px;
+    font-size: 30px; }
+    @media screen and (max-width: 415px) {
       .price-post__button {
-        width: 50px;
-        font-size: 13px;
-        padding: 25px 10% 0px 10px; } }
+        padding: 25px 0px 25px 0px;
+        font-size: 20px; } }
     .price-post__button:hover {
       opacity: 0.6; }
 
@@ -959,41 +1035,54 @@ header {
   overflow: hidden;
   position: relative; }
   .place h2 {
-    font-size: 30px;
+    font-size: 40px;
     padding: 50px 0;
-    color: #bb352b; }
-    @media screen and (max-width: 414px) {
+    color: black;
+    font-style: italic; }
+    @media screen and (max-width: 415px) {
       .place h2 {
-        padding: 20px 0; } }
+        padding: 20px 0;
+        font-size: 24px; } }
     .place h2::after {
       content: "アクセス";
       color: gray;
       font-size: 0.5em;
       display: block; }
+      @media screen and (max-width: 415px) {
+        .place h2::after {
+          font-size: 16px; } }
   .place__toptext {
     font-style: bold;
-    font-size: 4vw; }
-    @media screen and (max-width: 414px) {
+    font-size: 3rem;
+    margin: 30px auto;
+    display: inline-block;
+    line-height: 100px; }
+    @media screen and (max-width: 415px) {
       .place__toptext {
-        font-size: 3vw; } }
+        font-size: 6vw; } }
   .place p {
     font-size: 15px;
     margin: 10px;
     position: absolute;
-    top: 20%;
-    left: 40%;
+    top: 15%;
+    left: 30%;
     animation-name: LeftToRight;
     animation-duration: 1s; }
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 415px) {
       .place p {
         left: 0;
         background-color: #525a165e;
-        color: white; } }
+        color: white;
+        line-height: 25px;
+        top: 10%; } }
   .place__image {
-    height: 800px;
+    height: 700px;
     width: 100%;
     background-image: url(../img/out2.jpg);
     background-size: cover; }
+    @media screen and (max-width: 415px) {
+      .place__image {
+        height: 500px; } }
   .place .map {
     text-align: center;
     margin: 5%; }
@@ -1005,7 +1094,7 @@ footer {
   color: white;
   display: flex;
   line-height: 40px; }
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 415px) {
     footer__text {
       font-size: 11px; } }
 
@@ -1075,10 +1164,10 @@ table th {
   text-align: left;
   width: 30%;
   background-color: #52c2d0;
-  color: white;
+  color: black;
   text-align: center;
   padding: 10px 0; }
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 415px) {
     table th {
       font-size: 10px; } }
 
@@ -1100,7 +1189,7 @@ table td {
   text-align: center;
   background-color: #eee;
   padding: 10px 0; }
-  @media screen and (max-width: 414px) {
+  @media screen and (max-width: 415px) {
     table td {
       font-size: 10px;
       padding: 0 10px; } }
@@ -1109,3 +1198,5 @@ table td {
   margin-left: auto;
   margin-right: auto;
   width: 75%; }
+  .price_table table {
+    width: 100%; }
