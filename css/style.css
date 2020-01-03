@@ -818,7 +818,8 @@ header {
   display: block;
   margin-top: 75px; }
   .service__game__wrapper {
-    display: flex; }
+    display: flex;
+    box-sizing: border-box; }
     @media screen and (max-width: 415px) {
       .service__game__wrapper {
         flex-wrap: wrap; } }
@@ -831,9 +832,7 @@ header {
     .service__game__img img {
       width: 250px;
       transition: 0.5s;
-      margin: 3%;
-      max-width: 370px;
-      max-height: 210px; }
+      margin: 3%; }
       @media screen and (max-width: 415px) {
         .service__game__img img {
           width: 40%;
