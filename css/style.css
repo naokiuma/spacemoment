@@ -835,8 +835,8 @@ header {
       margin: 3%; }
       @media screen and (max-width: 415px) {
         .service__game__img img {
-          width: 40%;
-          height: auto;
+          width: 30%;
+          height: 80px;
           display: block; } }
       .service__game__img img:hover {
         border-radius: 10%;
