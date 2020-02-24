@@ -836,7 +836,9 @@ header {
       background-color: white; } }
   .service__game__wrapper {
     display: flex;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    width: 95%;
+    margin: auto; }
     @media screen and (max-width: 415px) {
       .service__game__wrapper {
         flex-wrap: wrap; } }
