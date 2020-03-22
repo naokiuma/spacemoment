@@ -471,6 +471,35 @@ header {
       animation-duration: 2s;
       font-weight: bold;
     }
+
+  }
+
+  &__text2{
+    background-color:#ffffffc4;
+    padding: 20px 40px;
+    font-size: $font-m;
+    position: absolute;
+    bottom: 15%;
+    left:60%;
+    border-radius: 10px;
+    
+    @media screen and (max-width: $res-max-width){
+      font-size:16px;
+      background-color:#fff0;
+      left:0;
+      padding: 10px;
+      color:white;
+      width: 100%;
+    }
+    h3{
+      animation-name: UpToBottom;
+      animation-duration: 2s;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+
+    
   }
 
   &__news{
@@ -480,7 +509,6 @@ header {
     font-style: oblique;
     padding: 30px 0;
     @media screen and (max-width: $res-max-width){
-    height: 160px;
     background-color: white;
     }
     h2{
@@ -495,6 +523,9 @@ header {
       font-size: 3vw;
       width: 40%;
       }
+    }
+    img{
+      width: 20%;
     }
     li{
       font-size: $font-s;
@@ -1003,6 +1034,10 @@ header {
       height:30px;
       line-height: 30px;
       font-size:20px;
+    }
+    &:hover{
+      color:blue;
+
     }
   }
 

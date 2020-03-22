@@ -382,6 +382,27 @@ header {
       animation-name: UpToBottom;
       animation-duration: 2s;
       font-weight: bold; }
+  .billboard__text2 {
+    background-color: #ffffffc4;
+    padding: 20px 40px;
+    font-size: 30px;
+    position: absolute;
+    bottom: 15%;
+    left: 60%;
+    border-radius: 10px; }
+    @media screen and (max-width: 415px) {
+      .billboard__text2 {
+        font-size: 16px;
+        background-color: #fff0;
+        left: 0;
+        padding: 10px;
+        color: white;
+        width: 100%; } }
+    .billboard__text2 h3 {
+      animation-name: UpToBottom;
+      animation-duration: 2s;
+      font-weight: bold;
+      font-size: 18px; }
   .billboard__news {
     display: block;
     width: 100%;
@@ -390,7 +411,6 @@ header {
     padding: 30px 0; }
     @media screen and (max-width: 415px) {
       .billboard__news {
-        height: 160px;
         background-color: white; } }
     .billboard__news h2 {
       border-top: 2px solid black;
@@ -404,6 +424,8 @@ header {
         .billboard__news h2 {
           font-size: 3vw;
           width: 40%; } }
+    .billboard__news img {
+      width: 20%; }
     .billboard__news li {
       font-size: 15px;
       color: black;
@@ -821,6 +843,8 @@ header {
       height: 30px;
       line-height: 30px;
       font-size: 20px; } }
+  .card:hover {
+    color: blue; }
 
 .service__gameimg-wrapper {
   display: flex;
