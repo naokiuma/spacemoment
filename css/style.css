@@ -245,7 +245,7 @@ header {
   justify-content: space-between;
   height: 50px;
   width: 100%;
-  background-color: #D1ECEFDE;
+  background-color: #A7EDF4;
   position: fixed;
   z-index: 10;
   font-style: oblique; }
@@ -1142,60 +1142,13 @@ footer {
   @media screen and (max-width: 415px) {
     footer {
       font-size: 12px; } }
-  @media screen and (max-width: 415px) {
-    footer__text {
-      font-size: 12px;
-      margin: auto; } }
-
-@keyframes BottomToUp {
-  0% {
-    opacity: 0;
-    /* 透明 */
-    transform: translateY(100px); }
-  100% {
-    opacity: 1;
-    /* 不透明 */
-    transform: translateY(0); } }
-
-@keyframes UpToBottom {
-  0% {
-    opacity: 0;
-    /* 透明 */
-    transform: translateY(-200px); }
-  100% {
-    opacity: 1;
-    /* 不透明 */
-    transform: translateY(0); } }
-
-@keyframes RightToLeft {
-  0% {
-    opacity: 0;
-    /* 透明 */
-    transform: translateX(100px);
-    /* X軸方向に50px */ }
-  100% {
-    opacity: 1;
-    /* 不透明 */
-    transform: translateX(0); } }
-
-@keyframes LeftToRight {
-  0% {
-    opacity: 0;
-    /* 透明 */
-    transform: translateX(-200px);
-    /* X軸方向に50px */ }
-  100% {
-    opacity: 1;
-    /* 不透明 */
-    transform: translateX(0); } }
-
-@keyframes OpacityMove {
-  0% {
-    opacity: 0;
-    /* 透明 */ }
-  100% {
-    opacity: 1;
-    /* 不透明 */ } }
+  footer__text {
+    margin-left: 15px;
+    font-size: 14px; }
+    @media screen and (max-width: 415px) {
+      footer__text {
+        font-size: 12px;
+        margin: auto; } }
 
 /*---------------テーブル*/
 table {
@@ -1249,3 +1202,53 @@ table td {
   width: 75%; }
   .price_table table {
     width: 100%; }
+
+@keyframes BottomToUp {
+  0% {
+    opacity: 0;
+    /* 透明 */
+    transform: translateY(100px); }
+  100% {
+    opacity: 1;
+    /* 不透明 */
+    transform: translateY(0); } }
+
+@keyframes UpToBottom {
+  0% {
+    opacity: 0;
+    /* 透明 */
+    transform: translateY(-200px); }
+  100% {
+    opacity: 1;
+    /* 不透明 */
+    transform: translateY(0); } }
+
+@keyframes RightToLeft {
+  0% {
+    opacity: 0;
+    /* 透明 */
+    transform: translateX(100px);
+    /* X軸方向に50px */ }
+  100% {
+    opacity: 1;
+    /* 不透明 */
+    transform: translateX(0); } }
+
+@keyframes LeftToRight {
+  0% {
+    opacity: 0;
+    /* 透明 */
+    transform: translateX(-200px);
+    /* X軸方向に50px */ }
+  100% {
+    opacity: 1;
+    /* 不透明 */
+    transform: translateX(0); } }
+
+@keyframes OpacityMove {
+  0% {
+    opacity: 0;
+    /* 透明 */ }
+  100% {
+    opacity: 1;
+    /* 不透明 */ } }
