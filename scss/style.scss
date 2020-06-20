@@ -1384,12 +1384,12 @@ footer{
   color: white;
   display: flex;
   line-height: 40px;
+  font-size: 14px;
   @media screen and (max-width: $res-max-width){
     font-size: 12px;
     }
   &__text{
     margin-left: 15px;
-    font-size: 14px;
     @media screen and (max-width: $res-max-width){
       font-size: 12px;
       margin: auto;
